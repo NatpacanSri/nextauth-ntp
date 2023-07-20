@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import { signIn,signOut,useSession } from "next-auth/react"
+import  style  from "../styles/styles.module.css"
 
 
 export default function Home() {
@@ -29,7 +30,10 @@ export default function Home() {
           <div>
             <p>Signed in as {session.user.email ?? session.user.name}</p>
             <p>username is {session.user.name}</p>
-            <div style={{backgroundImage:`url('${session.user.image}')`, display:'block', width:'400px' }} ></div>
+            <span
+                  style={{ backgroundImage: `url('${session.user.image}')` }}
+                  className={style.avatar}
+                />
             <a href={`/api/auth/signout`}
               onClick={(e)=>{
                 e.preventDefault()
