@@ -29,9 +29,7 @@ export default function Home() {
           <div>
             <p>Signed in as {session.user.email ?? session.user.name}</p>
             <p>username is {session.user.name}</p>
-            <span
-                  style={{ backgroundImage: `url('${session.user.image}')` }}
-                />
+            <div style={{backgroundImage:`url('${session.user.image}')`, display:'block', width:'400px' }} ></div>
             <a href={`/api/auth/signout`}
               onClick={(e)=>{
                 e.preventDefault()
